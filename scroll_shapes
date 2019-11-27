@@ -1,0 +1,88 @@
+//Scrolling 10 created shapes in a forever loop
+
+#include "MicroBit.h"
+
+MicroBit    uBit;
+MicroBitDisplay display;
+
+int main() {
+    const int width = 5;
+    const int height = 5;
+    const uint8_t heart[] ={0, 1, 0, 1, 0, 
+                            1, 1, 1, 1, 1, 
+                            1, 1, 1, 1, 1, 
+                            0, 1, 1, 1, 0, 
+                            0, 0, 1, 0, 0,};
+    const uint8_t shape1[]={0, 0, 1, 0, 0,
+                            0, 1, 0, 1, 1,
+                            1, 0, 0, 0, 1,
+                            1, 1, 0, 0, 1,
+                            0, 1, 1, 1, 1};
+    const uint8_t shape2[]={0, 1, 1, 1, 0,
+                            1, 1, 0, 1, 1,
+                            1, 0, 0, 0, 1,
+                            1, 1, 0, 1, 1,
+                            0, 1, 1, 1, 0};
+    const uint8_t shape3[]={0, 1, 1, 1, 0,
+                            0, 1, 0, 1, 1,
+                            1, 0, 1, 0, 1,
+                            1, 1, 0, 1, 0,
+                            0, 1, 1, 1, 0};
+    const uint8_t shape4[]={0, 0, 1, 0, 0,
+                            0, 1, 0, 1, 0,
+                            1, 0, 0, 0, 1,
+                            0, 1, 0, 1, 0,
+                            0, 0, 1, 0, 0};
+    const uint8_t shape5[]={0, 1, 1, 1, 1,
+                            0, 1, 1, 1, 0,
+                            0, 1, 0, 0, 0,
+                            0, 1, 1, 1, 0,
+                            0, 1, 1, 1, 1};
+    const uint8_t shape6[]={0, 0, 1, 0, 0,
+                            0, 1, 1, 1, 0,
+                            1, 1, 1, 1, 1,
+                            0, 1, 0, 1, 0,
+                            1, 0, 0, 0, 1};
+    const uint8_t shape7[]={0, 0, 0, 0, 0,
+                            0, 0, 0, 1, 0,
+                            0, 0, 1, 1, 0,
+                            0, 1, 1, 1, 0,
+                            1, 1, 1, 1, 0};
+    const uint8_t shape8[]={1, 1, 1, 0, 0,
+                            1, 0, 1, 1, 1,
+                            1, 1, 1, 0, 1,
+                            1, 0, 1, 1, 1,
+                            1, 1, 1, 0, 0};
+    const uint8_t shape9[]={1, 1, 1, 0, 0,
+                            0, 1, 1, 1, 0,
+                            1, 0, 1, 0, 0,
+                            1, 1, 1, 0, 0,
+                            1, 1, 1, 0, 0};
+                            
+    MicroBitImage heartImage(width, height, heart);
+    MicroBitImage shape1Image(width, height, shape1);
+    MicroBitImage shape2Image(width, height, shape2);
+    MicroBitImage shape3Image(width, height, shape3);
+    MicroBitImage shape4Image(width, height, shape4);
+    MicroBitImage shape5Image(width, height, shape5);
+    MicroBitImage shape6Image(width, height, shape6);
+    MicroBitImage shape7Image(width, height, shape7);
+    MicroBitImage shape8Image(width, height, shape8);
+    MicroBitImage shape9Image(width, height, shape9);
+    
+    MicroBitImage imageArray[] = {heartImage, shape1Image, shape2Image,
+        shape3Image, shape4Image, shape5Image, shape6Image, shape7Image,
+        shape8Image, shape9Image};
+        
+    int arrayLen = sizeof(imageArray)/sizeof(imageArray[0]);
+    
+    while(1) {
+        for(int i = 0; i < arrayLen; i++) {
+            display.scroll(imageArray[i], 400, 1);
+            if(i == arrayLen) {
+                i = 0;
+                }
+            }
+    uBit.sleep(0);
+    }
+}  
