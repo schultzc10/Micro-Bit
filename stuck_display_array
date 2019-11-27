@@ -1,0 +1,38 @@
+#include "MicroBit.h"
+
+MicroBit uBit;
+MicroBitDisplay display;
+
+int main() {
+    // Initialise the micro:bit runtime.
+    uBit.init();
+    
+    const int width = 5;
+    const int height = 5;
+    uint8_t shape[]= {0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0
+                      };
+
+    //MicroBitImage shapeImage(width, height, shape);
+    // Insert your code here!
+    while(1) {
+        int zeroes = 25;
+        while (zeroes > 0) {
+            uBit.display.print(shape);
+            int randNum = uBit.random(24);
+            if (shape[randNum] == 0) {
+                shape[randNum] = 1;
+                zeroes--;
+                }
+            else continue;
+        }     
+    // If main exits, there may still be other fibers running or registered event handlers etc.
+    // Simply release this fiber, which will mean we enter the scheduler. Worse case, we then
+    // sit in the idle task forever, in a power efficient sleep.
+        release_fiber();
+        }
+    }    
+
