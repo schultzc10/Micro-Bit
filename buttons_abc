@@ -1,0 +1,30 @@
+#include "MicroBit.h"
+#include "MicroBitButton.h"
+
+MicroBit uBit;
+
+int main() {
+    // Initialise the micro:bit runtime.
+    uBit.init();
+
+while(1) {
+    //show 'C' on display if both 'A' and 'B' buttons are clicked at same time  
+    if (uBit.buttonA.isPressed() == 1 && uBit.buttonB.isPressed() == 1) {
+            uBit.display.print('C');
+            uBit.sleep(100);
+            uBit.display.clear();
+            }
+    //show 'A' on display if 'A' button is clicked          
+    else if (uBit.buttonA.isPressed() == 1) {
+            uBit.display.print('A');
+            uBit.sleep(100);
+            uBit.display.clear();
+            }
+    //show 'B' on display if 'B' button is clicked        
+    else if (uBit.buttonB.isPressed() == 1) {
+            uBit.display.print('B');
+            uBit.sleep(100);
+            uBit.display.clear();
+            }
+        }
+    }
