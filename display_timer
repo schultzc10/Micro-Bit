@@ -1,0 +1,21 @@
+#include "MicroBit.h"
+
+MicroBit uBit;
+
+int main(){
+    // Initialise the micro:bit runtime.
+    uBit.init();
+    
+    const char seconds[] = {'0','1','2','3','4','5','6','7','8','9'};
+    const int arrayLen = sizeof(seconds)/sizeof(seconds[0]);
+    
+    while (1) {
+    for (int i = 0; i < arrayLen; i++){
+        uBit.display.clear();
+        uBit.display.print(seconds[i]);
+        uBit.sleep(1000);
+            if (i == arrayLen-1) i = -1;
+        }
+        release_fiber();
+    }
+}
