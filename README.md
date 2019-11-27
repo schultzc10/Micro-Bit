@@ -12,3 +12,5 @@
 8. Make a dice that randomly generates a number between 1 and 6 when thrown. Measure the acceleration, and make a random          number from the measured data.
 9. Send a message A and display A when button A is clicked, and likewise with B. The other board receives the message and show    the corresponding character.
 10.Send current temperate to the other board in Celsius first when button A is clicked, and in Fahrenheit when button B is        clicked.
+
+We use the DAL from Lancaster University on ARM Mbed https://ide.mbed.com/.
