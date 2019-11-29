@@ -7,6 +7,8 @@
    
 2. Display 25 dots randomly one by one. Clear the dots, and display the dots one by one over and over again.
 
+   *** See randomly_populate_display in code.
+
 3. Show A when Button A is clicked. B when Button B is clicked, and C when both buttons a clicked.
    Make the code using an infinite loop and interrupt.
    
