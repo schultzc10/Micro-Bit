@@ -16,7 +16,7 @@
    
 4. Display one dot randomly in the matrix. Use Button A and B to move the dot left or right. Click both buttons to move the      dot up. When the dot is at the highest row and both buttons are clicked, move the dot to the bottom.
 
-   *** See move_led_with_buttons
+   *** See move_led_with_buttons in code.
 
 5. Make the same program as 4, but this time move the board so that accelerometer can catch the direction to move the dot.
 
@@ -31,5 +31,7 @@
 9. Send a message A and display A when button A is clicked, and likewise with B. The other board receives the message and show    the corresponding character.
 
 10.Send current temperate to the other board in Celsius first when button A is clicked, and in Fahrenheit when button B is        clicked.
+
+   *** See send_temp_radio in code.
 
    ***I used the DAL from Lancaster University on ARM Mbed https://ide.mbed.com/.***
