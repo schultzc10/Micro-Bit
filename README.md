@@ -22,6 +22,8 @@
 
 6. Display current temperature in Celsius first when button A is clicked, and in Fahrenheit when button B is clicked.
 
+   *** See buttons_show_temp in code.
+
 7. Make a timer, it displays 0 to 9 and 0 again. Use both timer and nested loops. 
 
    *** See display_timer in code.
