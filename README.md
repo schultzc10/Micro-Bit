@@ -32,6 +32,8 @@
 
 9. Send a message A and display A when button A is clicked, and likewise with B. The other board receives the message and show    the corresponding character.
 
+   *** See send_message_radio in code.
+
 10.Send current temperate to the other board in Celsius first when button A is clicked, and in Fahrenheit when button B is        clicked.
 
    *** See send_temp_radio in code.
