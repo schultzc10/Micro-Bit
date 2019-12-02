@@ -20,6 +20,8 @@
 
 5. Make the same program as 4, but this time move the board so that accelerometer can catch the direction to move the dot.
 
+   *** See move_led_accelerometer in code.
+   
 6. Display current temperature in Celsius first when button A is clicked, and in Fahrenheit when button B is clicked.
 
    *** See buttons_show_temp in code.
